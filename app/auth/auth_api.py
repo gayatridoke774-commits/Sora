@@ -22,3 +22,19 @@ def signup(email: str, password: str):
                )
 
                 return response.json()
+
+def login(email: str, password: str):
+    url = (
+        f"https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword"
+        f"?key={FIREBASE_API_KEY}"
+    )
+
+    payload = {
+        "email": email,
+        "password": password,
+        "returnSecureToken": True
+    }
+
+    response = requests.post(url, json=payload)
+
+    return response.json()
