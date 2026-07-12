@@ -1,6 +1,6 @@
 from app.session.current_user import get_current_user
 from app.session.session_manager import clear_session
-
+from app.subject.subject_menu import subject_menu
 
 def show_dashboard():
     user = get_current_user()
@@ -27,7 +27,7 @@ def show_dashboard():
             print("\n🚧 Continue Study feature coming soon!")
 
         elif choice == "2":
-            print("\n🚧 Subject Manager coming soon!")
+            subject_menu()
 
         elif choice == "3":
             print("\n🚧 Progress Analytics coming soon!")
